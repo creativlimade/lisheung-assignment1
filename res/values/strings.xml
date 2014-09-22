@@ -5,9 +5,9 @@
     <string name="title_section1">ToDo List</string>
     <string name="title_section2">Archive</string>
     <string name="title_section3">Email</string>
+    <string name="title_section4">Summary</string>    
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_example">add</string>
     <string name="action_settings">Settings</string>
 
 </resources>

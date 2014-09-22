@@ -21,16 +21,10 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
 
-	/**
-	 * Fragment managing the behaviors, interactions and presentation of the
-	 * navigation drawer.
-	 */
+	/** Fragment managing the behaviors, interactions and presentation of the navigation drawer.*/
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
-	/**
-	 * Used to store the last screen title. For use in
-	 * {@link #restoreActionBar()}.
-	 */
+	/** Used to store the last screen title. For use in {@link #restoreActionBar()}. */
 	private CharSequence mTitle;
 
 	@Override
@@ -50,11 +44,24 @@ public class MainActivity extends Activity implements
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
+		Fragment fragment = new FragmentTodo();
 		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager
-				.beginTransaction()
-				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+		switch (position+1) {
+			case 1:
+				fragment = new FragmentTodo();
+				break;
+			case 2:
+				fragment = new FragmentArchive();
+				break;
+			case 3:
+				fragment = new FragmentEmail();
+				break;
+			case 4:
+				fragment = new FragmentSummary();
+				break;
+		}
+		fragmentManager.beginTransaction()
+				.replace(R.id.container, fragment).commit();
 	}
 
 	public void onSectionAttached(int number) {
@@ -67,6 +74,9 @@ public class MainActivity extends Activity implements
 			break;
 		case 3:
 			mTitle = getString(R.string.title_section3);
+			break;
+		case 4:
+			mTitle = getString(R.string.title_section4);
 			break;
 		}
 	}
@@ -103,19 +113,13 @@ public class MainActivity extends Activity implements
 		return super.onOptionsItemSelected(item);
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
+	/** A placeholder fragment containing a simple view. */
 	public static class PlaceholderFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
+		
+		/** The fragment argument representing the section number for this fragment. */
 		private static final String ARG_SECTION_NUMBER = "section_number";
 
-		/**
-		 * Returns a new instance of this fragment for the given section number.
-		 */
+		/** Returns a new instance of this fragment for the given section number. */
 		public static PlaceholderFragment newInstance(int sectionNumber) {
 			PlaceholderFragment fragment = new PlaceholderFragment();
 			Bundle args = new Bundle();
