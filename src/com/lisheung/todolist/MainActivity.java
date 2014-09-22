@@ -23,7 +23,7 @@ public class MainActivity extends Activity implements
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
-	 * navigation drawer. Testing cross platform editing.
+	 * navigation drawer.
 	 */
 	private NavigationDrawerFragment mNavigationDrawerFragment;
 
