@@ -5,5 +5,11 @@
     android:orientation="vertical"
     android:background="#ff8c00" >"
     
+    <TextView
+        android:id="@+id/EmailText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email" >        
+    </TextView>
 
 </LinearLayout>

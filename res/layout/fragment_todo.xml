@@ -5,5 +5,39 @@
     android:orientation="vertical"
     android:background="#45d6bd" >
     
+    <TextView
+        android:id="@+id/Things"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/things_to_do" >        
+    </TextView>
+        
+    <ListView 
+        android:id="@+id/ItemsList"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" >        
+    </ListView>
 
+    <TextView
+        android:id="@+id/AddItem"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_item" >        
+    </TextView>
+    
+    <EditText 
+        android:id="@+id/TextBody"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal" />
+    
+    <Button 
+        android:id="@+id/AddButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/press_to_add"
+        android:onClick="Add" />
+    
 </LinearLayout>
