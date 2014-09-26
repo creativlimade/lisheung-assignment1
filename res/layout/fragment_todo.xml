@@ -38,6 +38,6 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/press_to_add"
-        android:onClick="Add" />
+        android:onClick="save" />
     
 </LinearLayout>

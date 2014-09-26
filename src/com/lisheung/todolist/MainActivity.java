@@ -1,22 +1,23 @@
 package com.lisheung.todolist;
 
-import android.app.Activity;
+import java.util.ArrayList;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import com.lisheung.todolist.FragmentTodo;
 
 public class MainActivity extends Activity implements
 		NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -26,7 +27,14 @@ public class MainActivity extends Activity implements
 
 	/** Used to store the last screen title. For use in {@link #restoreActionBar()}. */
 	private CharSequence mTitle;
+	
+	/**private DataManager dataManager;
+	private EditText bodyText;
+	private ArrayList<Item> items;
+	private ArrayAdapter<Item> itemsViewAdapter;
+	private ListView ItemsList;*/
 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,8 +47,36 @@ public class MainActivity extends Activity implements
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
+		
+		// Set up the array.
+		/**bodyText = (EditText) findViewById(R.id.TextBody);
+		ItemsList = (ListView) findViewById(R.id.ItemsList);*/
 	}
 
+	/**@Override
+	protected void onStart() {
+		super.onStart();
+		
+		dataManager = new DataFileManager();
+		
+		items = dataManager.loadItems();
+		
+		itemsViewAdapter = new ArrayAdapter<Item>(this, R.layout.list_item, items);
+		ItemsList.setAdapter(itemsViewAdapter);
+	}*/
+	
+	/**public void save(View v) {
+		String text = bodyText.getText().toString();
+		
+		Item item = new Item(text);
+		items.add(item);
+		
+		itemsViewAdapter.notifyDataSetChanged();
+		
+		bodyText.setText("");
+		dataManager.saveItems(items);
+	}*/
+	
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
 		// update the main content by replacing fragments
